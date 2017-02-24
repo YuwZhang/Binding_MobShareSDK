@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{79FD9B75-E30E-4F6E-A437-C73F3650CF43}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Binding_MobShareSDK</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Binding_MobShareSDK</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="frameworks\optional\" />
+    <Folder Include="frameworks\required\" />
+    <Folder Include="Resources\" />
+    <Folder Include="ShareSDKUI.bundle\zh-Hans.lproj\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="libMOBFoundationEx.linkwith.cs">
+      <DependentUpon>libMOBFoundationEx.a</DependentUpon>
+    </Compile>
+    <Compile Include="libShareSDKConfigFile.linkwith.cs">
+      <DependentUpon>libShareSDKConfigFile.a</DependentUpon>
+    </Compile>
+    <Compile Include="libShareSDKExtension.linkwith.cs">
+      <DependentUpon>libShareSDKExtension.a</DependentUpon>
+    </Compile>
+    <Compile Include="libShareSDKUI.linkwith.cs">
+      <DependentUpon>libShareSDKUI.a</DependentUpon>
+    </Compile>
+    <Compile Include="libMOBFoundation.linkwith.cs">
+      <DependentUpon>libMOBFoundation.a</DependentUpon>
+    </Compile>
+    <Compile Include="libShareSDK.linkwith.cs">
+      <DependentUpon>libShareSDK.a</DependentUpon>
+    </Compile>
+    <Compile Include="libShareSDKConnector.linkwith.cs">
+      <DependentUpon>libShareSDKConnector.a</DependentUpon>
+    </Compile>
+    <Compile Include="PlatformConnector\libMailConnector.linkwith.cs">
+      <DependentUpon>libMailConnector.a</DependentUpon>
+    </Compile>
+    <Compile Include="PlatformConnector\libQQConnector.linkwith.cs">
+      <DependentUpon>libQQConnector.a</DependentUpon>
+    </Compile>
+    <Compile Include="PlatformConnector\libSinaWeiboConnector.linkwith.cs">
+      <DependentUpon>libSinaWeiboConnector.a</DependentUpon>
+    </Compile>
+    <Compile Include="PlatformConnector\libSMSConnector.linkwith.cs">
+      <DependentUpon>libSMSConnector.a</DependentUpon>
+    </Compile>
+    <Compile Include="PlatformConnector\libWechatConnector.linkwith.cs">
+      <DependentUpon>libWechatConnector.a</DependentUpon>
+    </Compile>
+    <Compile Include="PlatformSDK\libTencentOpenAPI.linkwith.cs">
+      <DependentUpon>libTencentOpenAPI.a</DependentUpon>
+    </Compile>
+    <Compile Include="PlatformSDK\libWeChatSDK.linkwith.cs">
+      <DependentUpon>libWeChatSDK.a</DependentUpon>
+    </Compile>
+    <Compile Include="PlatformSDK\libWeiboSDK.linkwith.cs">
+      <DependentUpon>libWeiboSDK.a</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDK.bundle\Base.lproj\ShareSDK.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDK.bundle\en.lproj\ShareSDK.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDK.bundle\ScriptCore\NativeExt.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDK.bundle\ScriptCore\ShareSDK.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDK.bundle\ScriptCore\platforms\Mail.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDK.bundle\ScriptCore\platforms\QQ.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDK.bundle\ScriptCore\platforms\SinaWeibo.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDK.bundle\ScriptCore\platforms\SMS.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDK.bundle\ScriptCore\platforms\WeChat.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDK.bundle\zh-Hans.lproj\ShareSDK.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKConfigFile.bundle\Map.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKConfigFile.bundle\ShareContent.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKConfigFile.bundle\ShareSDK.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Base.lproj\ShareSDKUI_Localizable.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\ContentEditorImg\line%402x.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\en.lproj\ShareSDKUI_Localizable.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_1%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_18%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_19%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_22%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_23%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_24%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_37%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\Icon\sns_icon_6%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ShareSDKUI.bundle\ShareSDKUI_Localizable.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="TencentOpenApi_IOS_Bundle.bundle\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="TencentOpenApi_IOS_Bundle.bundle\qqicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="TencentOpenApi_IOS_Bundle.bundle\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\alert_error_icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\alert_success_icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\close%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\common_button_big_blue%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\common_button_big_blue_disable%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\common_button_big_blue_highlighted%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\common_button_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\common_button_white%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\common_button_white_highlighted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\common_button_white_highlighted%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\common_icon_arrow%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\compose_keyboardbutton_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\compose_keyboardbutton_background%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\compose_toolbar_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\compose_toolbar_background%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\empty_failed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\empty_failed%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\login_background%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\login_country_background%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\login_country_background_highlighted%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\navigationbar_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\navigationbar_background%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\navigationbar_background_os7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\navigationbar_background_os7%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\progresshud_background%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\sdk_weibo_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\sdk_weibo_logo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\sdk_weibo_logo%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\timeline_relationship_icon_addattention.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\timeline_relationship_icon_addattention%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\timeline_relationship_icon_addattention%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\timeline_relationship_icon_attention.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\timeline_relationship_icon_attention%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\timeline_relationship_icon_attention%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\verify_code_button%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\verify_code_button%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\verify_code_button_highlighted%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\images\verify_code_button_highlighted%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\others\countryList" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="WeiboSDK.bundle\others\mfp.cer" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="PlatformConnector\libMailConnector.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="PlatformConnector\libQQConnector.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="PlatformConnector\libSinaWeiboConnector.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="PlatformConnector\libWechatConnector.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="PlatformSDK\libTencentOpenAPI.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="PlatformSDK\libWeChatSDK.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="PlatformSDK\libWeiboSDK.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="libShareSDKConfigFile.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="libShareSDKExtension.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="libShareSDKUI.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="libMOBFoundation.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="libShareSDK.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="libShareSDKConnector.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="PlatformConnector\libSMSConnector.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="TencentOpenApi_IOS_Bundle.bundle\local.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="libMOBFoundationEx.a" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+</Project>
